@@ -1,1 +1,1 @@
-# Zerro-Shot-Mapping-Project
+# Zero-Shot-Mapping-Project
