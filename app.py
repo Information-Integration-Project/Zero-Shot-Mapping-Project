@@ -33,7 +33,7 @@ df_2_clean = df_2_clean[df_2_clean['Description'].str.strip() != '']
 labels = df_1_clean['category'].unique()
 
 # Classifier
-zero_shot_classifier = pipeline(model="facebook/bart-large-mnli")
+# zero_shot_classifier = pipeline(model="facebook/bart-large-mnli")
 
 # New result dataframe
 df_2_result = df_2_clean.copy()[:NUMBER_O_ROWS]
