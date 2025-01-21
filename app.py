@@ -1,8 +1,8 @@
-from transformers import pipeline
+# from transformers import pipeline
 import streamlit as st
 import pandas as pd
 import numpy as np
-import tqdm
+# import tqdm
 
 REDO = False
 NUMBER_O_ROWS = 1_000
@@ -42,18 +42,19 @@ df_2_result = df_2_clean.copy()[:NUMBER_O_ROWS]
 df_2_result['category'] = ''
 
 if REDO:
-    print("Starting classification of descriptions...")
-    # Iterate over rows of DF_2 and assign category based on description (Zero-Shot-Classification) with progress bar
-    with tqdm.tqdm(total=df_2_result.shape[0], desc="Classifying") as pbar:
-        for index, row in df_2_result.iloc[:NUMBER_O_ROWS].iterrows():
-            description = row['Description']
-            result = zero_shot_classifier(description, labels)
-            category = result['labels'][0]
-            df_2_result.at[index, 'category'] = category
-            pbar.update(1)
+    pass
+    # print("Starting classification of descriptions...")
+    # # Iterate over rows of DF_2 and assign category based on description (Zero-Shot-Classification) with progress bar
+    # with tqdm.tqdm(total=df_2_result.shape[0], desc="Classifying") as pbar:
+    #     for index, row in df_2_result.iloc[:NUMBER_O_ROWS].iterrows():
+    #         description = row['Description']
+    #         result = zero_shot_classifier(description, labels)
+    #         category = result['labels'][0]
+    #         df_2_result.at[index, 'category'] = category
+    #         pbar.update(1)
 
-    # Save result to CSV
-    df_2_result.to_csv('Online_Retail_with_category.csv', index=False, encoding='ISO-8859-1')
+    # # Save result to CSV
+    # df_2_result.to_csv('Online_Retail_with_category.csv', index=False, encoding='ISO-8859-1')
 
 else:
     # Read data from last time
